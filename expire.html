@@ -10,13 +10,16 @@
    <h1> Expire Check Form</h1>
 <form id="expiryform">
 
-<input type="text" id="itemNo" placeholder="Item Number">
+<label for="itemNo">Item Number</label>
+        <input type="text" id="itemNo" required>
 
-<input type="text" id="shelf" placeholder="Shelf">
+        <label for="shelf">Shelf</label>
+        <input type="text" id="shelf" required>
 
-<input type="date" id="expireDate" placeholder="EXPIRE DATE">
+        <label for="expireDate">Expiry Date</label>
+        <input type="date" id="expireDate" required>
 
-<button type="submit">Submit</button>
+        <button type="submit">Submit</button>
 
 </form>
 <script src="script-expiry.js"></script>
