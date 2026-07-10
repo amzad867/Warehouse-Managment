@@ -10,30 +10,36 @@
  <h1> Daily Wastage Form</h1>
 <form id="wastageForm">
 
-<input type="text" id="itemNo" placeholder="Item Number">
 
-<input type="number" id="quantity" placeholder="Quantity">
+<label for="itemNo">Item Number</label>
+        <input type="text" id="itemNo" required>
 
-<select id="reason">
-    <option value="">Select Reason</option>
-    <option>Damage</option>
-    <option>Expire</option>
-    <option>Recall</option>
-</select>
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" min="1" required>
 
-<select id="resource">
-    <option value="">Select Resource</option>
-    <option>Ambient</option>
-    <option>Chiller</option>
-    <option>Freezer</option>
-</select>
+        <label for="reason">Reason</label>
+        <select id="reason" required>
+            <option value="">Select Reason</option>
+            <option>Damage</option>
+            <option>Expire</option>
+            <option>Recall</option>
+        </select>
 
-<input type="date" id="expireDate">
+        <label for="resource">Resource</label>
+        <select id="resource" required>
+            <option value="">Select Resource</option>
+            <option>Ambient</option>
+            <option>Chiller</option>
+            <option>Freezer</option>
+        </select>
 
-<input type="text" id="responsible" placeholder="Responsible">
+        <label for="expireDate">Expiry Date</label>
+        <input type="date" id="expireDate" required>
 
+        <label for="responsible">Responsible Person</label>
+        <input type="text" id="responsible" required>
 
-<button type="submit">Submit</button>
+        <button type="submit">Submit</button>
 
 </form>
 <script src="script-wastage.js"></script>
