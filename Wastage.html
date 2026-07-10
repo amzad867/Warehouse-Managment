@@ -1,1 +1,41 @@
+<!DOCTYPE html>
 
+<html>
+  <head>
+    <title>WareHouse Managment</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body> 
+
+ <h1> Daily Wastage Form</h1>
+<form id="wastageForm">
+
+<input type="text" id="itemNo" placeholder="Item Number">
+
+<input type="number" id="quantity" placeholder="Quantity">
+
+<select id="reason">
+    <option value="">Select Reason</option>
+    <option>Damage</option>
+    <option>Expire</option>
+    <option>Recall</option>
+</select>
+
+<select id="resource">
+    <option value="">Select Resource</option>
+    <option>Ambient</option>
+    <option>Chiller</option>
+    <option>Freezer</option>
+</select>
+
+<input type="date" id="expireDate">
+
+<input type="text" id="responsible" placeholder="Responsible">
+
+
+<button type="submit">Submit</button>
+
+</form>
+<script src="script-wastage.js"></script>
+</body>
+</html>
