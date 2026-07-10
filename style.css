@@ -9,7 +9,7 @@ body{
     width:120px;
     height:120px;
     background:#F7F7F7;
-    border-radius:50%;
+    border-radius:100%;
     margin:30px auto;
     display:flex;
     justify-content:center;
@@ -17,15 +17,17 @@ body{
 }
 
 .logo img{
-    width:70px;
-    height:70px;
+    width:120px;
+    height:90px;
 }
 
 h1{
     text-align:center;
     color: #00AAB5;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 700;
     margin-bottom: 30px;
+    font-family:"Lora",serif;
 }
 
 .container{
