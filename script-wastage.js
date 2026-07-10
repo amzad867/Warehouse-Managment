@@ -31,4 +31,3 @@ document.getElementById("wastageForm").addEventListener("submit", function(e){
 });
 
 });
-
