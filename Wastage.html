@@ -1,21 +1,31 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-  <head>
-    <title>WareHouse Managment</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Management</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-<body> 
+</head>
 
- <h1> Daily Wastage Form</h1>
-<form id="wastageForm">
+<body>
 
+    <h1>🗑️ Daily Wastage Form</h1>
 
-<label for="itemNo">Item Number</label>
-        <input type="text" id="itemNo" required>
+    <form id="wastageForm">
+
+        <label for="itemNo">Item Number</label>
+        <input
+            type="text"
+            id="itemNo"
+            required>
 
         <label for="quantity">Quantity</label>
-        <input type="number" id="quantity" min="1" required>
+        <input
+            type="number"
+            id="quantity"
+            min="1"
+            required>
 
         <label for="reason">Reason</label>
         <select id="reason" required>
@@ -34,14 +44,37 @@
         </select>
 
         <label for="expireDate">Expiry Date</label>
-        <input type="date" id="expireDate" required>
+        <input
+            type="date"
+            id="expireDate"
+            required>
 
         <label for="responsible">Responsible Person</label>
-        <input type="text" id="responsible" required>
+        <input
+            type="text"
+            id="responsible"
+            required>
 
-        <button type="submit">Submit</button>
+        <label for="photo">Waste Photo</label>
 
-</form>
-<script src="script-wastage.js"></script>
+        <input
+            type="file"
+            id="photo"
+            accept="image/*">
+
+        <img
+            id="preview"
+            src=""
+            style="display:none;width:100%;max-height:250px;margin-top:15px;border-radius:12px;object-fit:cover;">
+
+        <button type="submit" id="submitBtn">
+            Submit
+        </button>
+
+    </form>
+
+    <script src="script-wastage.js"></script>
+
 </body>
+
 </html>
