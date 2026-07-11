@@ -76,39 +76,38 @@ form.addEventListener("submit", function (e) {
 
     })
 
-    .then(async res => {
+   .then(async (res) => {
+
     const text = await res.text();
-    alert("Status: " + res.status + "\n\n" + text);
+
+    alert(
+        "Status: " + res.status +
+        "\n\nResponse:\n" + text
+    );
+
+    form.reset();
+
+    preview.style.display = "none";
+    preview.src = "";
+
+    photoBase64 = "";
+
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Submit";
+
 })
+.catch((err) => {
 
-    .then(data => {
+    alert(
+        "ERROR:\n" +
+        err.name +
+        "\n\n" +
+        err.message
+    );
 
-        alert(data);
+    console.error(err);
 
-        form.reset();
-
-        preview.style.display = "none";
-
-        preview.src = "";
-
-        photoBase64 = "";
-
-        submitBtn.disabled = false;
-
-        submitBtn.innerHTML = "Submit";
-
-    })
-
-    .catch(err => {
-
-        console.log(err);
-
-        alert("Upload Failed");
-
-        submitBtn.disabled = false;
-
-        submitBtn.innerHTML = "Submit";
-
-    });
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Submit";
 
 });
