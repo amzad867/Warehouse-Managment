@@ -1,33 +1,32 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxtzNuZLivKE-Lsej80nHNqnH4j7BzBj7yidCdbK6AfWfTIbx7HjV1618JHuLkg9UmE/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwekGxhueot9Jgjch6qfg1DjknPffpq-lZJESs1E_rp7EQTCrkFJieuruMKqpWTJszP/exec";
 
-document.getElementById("shortstockForm").addEventListener("submit", function(e){
+const form = document.getElementById("shortstockForm");
+
+form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
-    fetch(scriptURL,{
-        method:"POST",
+fetch(scriptURL, {
 
-        body: JSON.stringify({
+    method: "POST",
 
-            formType: "ShortStock",
+    body: JSON.stringify({
 
-            itemNo: document.getElementById("itemNo").value,
-            shelf: document.getElementById("shelf").value,
-            shortQuantity: document.getElementById("shortQuantity").value
-
-        })
+        itemNo: document.getElementById("itemNo").value,
+        shelf: document.getElementById("shelf").value,
+        shortQuantity: document.getElementById("shortQuantity").value
 
     })
 
-    .then(res => res.text())
-    .then(data => {
-        alert("Server Response: " + data);
-        document.getElementById("shortstockForm").reset();
-    })
+})
+.then(res => res.text())
+.then(data => {
 
-    .catch(error => {
-        alert("Error: " + error);
-        console.log(error);
-    });
+    alert(data);
+
+})
+.catch(err => {
+
+    alert("ERROR: " + err);
 
 });
