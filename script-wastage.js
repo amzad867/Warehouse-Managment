@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxxuCJRw9iqlBUgnoF0G3MnSkQKwXAAq0EOod2hT-gZ_Mk6G3SRQyViRf_Iblosvn0G/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxAJb4wh9NZIf4W7EVeUIMZ8vXCnGb_IX04uzmpWclkHQUtjct_aTpxr7AhQeNs_RKF/exec";
 
 const form = document.getElementById("wastageForm");
 const preview = document.getElementById("preview");
