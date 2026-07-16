@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expiry Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>📅 Expiry Check</h1>
+
+    <form id="expiryForm">
+
+        <label>Item Number</label>
+        <input
+            type="text"
+            id="itemNo"
+            placeholder="Enter Item Number"
+            required
+        >
+
+        <label>Expiry Date</label>
+        <input
+            type="date"
+            id="expiryDate"
+            required
+        >
+
+        <label>Shelf Number</label>
+        <input
+            type="text"
+            id="shelf"
+            placeholder="Enter Shelf Number"
+            required
+        >
+
+        <button type="submit">
+            Save
+        </button>
+
+    </form>
+
+    <script src="script-expiry.js"></script>
+
+</body>
+</html>
