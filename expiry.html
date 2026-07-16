@@ -4,42 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expiry Check</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>📅 Expiry Check</h1>
+    <div class="container">
 
-    <form id="expiryForm">
+        <h1>📅 Expiry Check</h1>
 
-        <label>Item Number</label>
-        <input
-            type="text"
-            id="itemNo"
-            placeholder="Enter Item Number"
-            required
-        >
+        <form id="expiryForm">
 
-        <label>Expiry Date</label>
-        <input
-            type="date"
-            id="expiryDate"
-            required
-        >
+            <label for="itemNo">Item Number</label>
+            <input
+                type="text"
+                id="itemNo"
+                placeholder="Enter Item Number"
+                autocomplete="off"
+                required
+            >
 
-        <label>Shelf Number</label>
-        <input
-            type="text"
-            id="shelf"
-            placeholder="Enter Shelf Number"
-            required
-        >
+            <label for="expiryDate">Expiry Date</label>
+            <input
+                type="date"
+                id="expiryDate"
+                required
+            >
 
-        <button type="submit">
-            Save
-        </button>
+            <label for="shelf">Shelf Number</label>
+            <input
+                type="text"
+                id="shelf"
+                placeholder="Enter Shelf Number"
+                autocomplete="off"
+                required
+            >
 
-    </form>
+            <button type="submit">
+                Save Expiry
+            </button>
+
+        </form>
+
+    </div>
 
     <script src="script-expiry.js"></script>
 
