@@ -1,4 +1,3 @@
-alert("JS Started");
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbyZAzBrjAkJZEGP6J_o95g_3EEak9otHponmtrox3-ng-xKCnuT3BRbir_fmlAl1rTSTQ/exec";
 
@@ -18,7 +17,6 @@ form.addEventListener("submit", function (e) {
     const reader = new FileReader();
 
     reader.onload = function () {
-alert("Reader Loaded");
         fetch(scriptURL, {
 
             method: "POST",
