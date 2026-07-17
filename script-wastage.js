@@ -1,113 +1,68 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxAJb4wh9NZIf4W7EVeUIMZ8vXCnGb_IX04uzmpWclkHQUtjct_aTpxr7AhQeNs_RKF/exec";
+alert("JS Started");
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbyZAzBrjAkJZEGP6J_o95g_3EEak9otHponmtrox3-ng-xKCnuT3BRbir_fmlAl1rTSTQ/exec";
 
 const form = document.getElementById("wastageForm");
-const preview = document.getElementById("preview");
-const photo = document.getElementById("photo");
-const submitBtn = document.getElementById("submitBtn");
 
-let photoBase64 = "";
-let fileName = "";
-let mimeType = "";
-
-// Photo Preview + Base64
-photo.addEventListener("change", function () {
-
-    const file = this.files[0];
-
-    if (!file) return;
-
-    fileName = file.name;
-    mimeType = file.type;
-
-    preview.src = URL.createObjectURL(file);
-    preview.style.display = "block";
-
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-
-        photoBase64 = e.target.result.split(",")[1];
-
-    };
-
-    reader.readAsDataURL(file);
-
-});
-
-
-// Submit
 form.addEventListener("submit", function (e) {
 
     e.preventDefault();
 
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = "Uploading...";
+    const photo = document.getElementById("photo").files[0];
 
-    fetch(scriptURL, {
+    if (!photo) {
+        alert("Please select a photo.");
+        return;
+    }
 
-        method: "POST",
+    const reader = new FileReader();
 
-        headers: {
-    "Content-Type": "application/json"
-},
-        body: JSON.stringify({
+    reader.onload = function () {
+alert("Reader Loaded");
+        fetch(scriptURL, {
 
-            formType: "DailyWastage",
+            method: "POST",
 
-            itemNo: document.getElementById("itemNo").value,
+            body: JSON.stringify({
 
-            quantity: document.getElementById("quantity").value,
+                itemNo: document.getElementById("itemNo").value,
 
-            reason: document.getElementById("reason").value,
+                quantity: document.getElementById("quantity").value,
 
-            resource: document.getElementById("resource").value,
+                reason: document.getElementById("reason").value,
 
-            expireDate: document.getElementById("expireDate").value,
+                resource: document.getElementById("resource").value,
 
-            responsible: document.getElementById("responsible").value,
+                expiryDate: document.getElementById("expiryDate").value,
 
-            photo: "",
+                photo: reader.result,
 
-            fileName: "",
+                responsible: document.getElementById("responsible").value
 
-            mimeType: ""
+            })
 
         })
 
-    })
+        .then(res => res.text())
 
-   .then(async (res) => {
+        .then(data => {
 
-    const text = await res.text();
+            alert(data);
 
-    alert(
-        "Status: " + res.status +
-        "\n\nResponse:\n" + text
-    );
+            form.reset();
 
-    form.reset();
+        })
 
-    preview.style.display = "none";
-    preview.src = "";
+        .catch(err => {
 
-    photoBase64 = "";
+            console.log(err);
 
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = "Submit";
+            alert("Error: " + err);
 
-})
-.catch((err) => {
+        });
 
-    alert(
-        "ERROR:\n" +
-        err.name +
-        "\n\n" +
-        err.message
-    );
+    };
 
-    console.error(err);
-
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = "Submit";
+    reader.readAsDataURL(photo);
 
 });

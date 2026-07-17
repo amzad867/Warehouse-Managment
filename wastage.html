@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warehouse Management</title>
+    <title>Daily Wastage</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>🗑️ Daily Wastage Form</h1>
+<div class="container">
+
+    <h1>🗑️ Daily Wastage</h1>
 
     <form id="wastageForm">
 
@@ -18,63 +19,69 @@
         <input
             type="text"
             id="itemNo"
-            required>
+            placeholder="Enter Item Number"
+            autocomplete="off"
+            required
+        >
 
         <label for="quantity">Quantity</label>
         <input
             type="number"
             id="quantity"
             min="1"
-            required>
+            placeholder="Enter Quantity"
+            required
+        >
 
         <label for="reason">Reason</label>
         <select id="reason" required>
-            <option value="">Select Reason</option>
-            <option>Damage</option>
-            <option>Expire</option>
-            <option>Recall</option>
+          
+            <option value="Damage">Damage</option>
+            <option value="Expired">Expired</option>
+            <option value="Recall">Recall</option>
+    
         </select>
 
         <label for="resource">Resource</label>
         <select id="resource" required>
-            <option value="">Select Resource</option>
-            <option>Ambient</option>
-            <option>Chiller</option>
-            <option>Freezer</option>
+            <option value="Ambient">Ambient</option>
+            <option value="Chiller">Chiller</option>
+            <option value="Freezer">Freezer</option>
         </select>
 
-        <label for="expireDate">Expiry Date</label>
+        <label for="expiryDate">Expiry Date</label>
         <input
             type="date"
-            id="expireDate"
-            required>
+            id="expiryDate"
+            
+        >
+
+        <label for="photo">Photo</label>
+        <input
+            type="file"
+            id="photo"
+            accept="image/*"
+          
+            required
+        >
 
         <label for="responsible">Responsible Person</label>
         <input
             type="text"
             id="responsible"
-            required>
+            placeholder="Enter Name"
+            autocomplete="off"
+        >
 
-        <label for="photo">Waste Photo</label>
-
-        <input
-            type="file"
-            id="photo"
-            accept="image/*">
-
-        <img
-            id="preview"
-            src=""
-            style="display:none;width:100%;max-height:250px;margin-top:15px;border-radius:12px;object-fit:cover;">
-
-        <button type="submit" id="submitBtn">
-            Submit
+        <button type="submit">
+            Save Wastage
         </button>
 
     </form>
 
-    <script src="script-wastage.js"></script>
+</div>
+
+<script src="script-wastage.js"></script>
 
 </body>
-
 </html>
