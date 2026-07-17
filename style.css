@@ -51,7 +51,8 @@ h1{
     text-align:center;
     color:#00AAB5;
     margin:25px 0;
-    font-size:40px;
+    font-size:44px;
+    font-weight: 700;
 }
 
 /* ===========================
@@ -61,10 +62,10 @@ h1{
 .home-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:15px;
-    width:80%;
-    max-width:900px;
-    margin:auto;
+    gap:20px;
+    width:90%;
+    max-width:1000px;
+    margin:20px auto 0;
 }
 
 a{
@@ -90,13 +91,16 @@ a{
 }
 
 .card i{
-    font-size:80px;
+    font-size:55px;
+    margin-bottom:10px;
 }
 
 .card p{
-    margin-top:12px;
-    font-size:20px;
-    font-weight:bold;
+    margin-top:10px;
+    font-family:'Poppins', sans-serif;
+    font-size:20px; 
+    font-weight:600;
+    letter-spacing:0.5px;
 }
 
 /* ===========================
@@ -104,14 +108,15 @@ a{
 =========================== */
 
 .form-container{
-    width:75%;
+    width:65%;
     max-width:450%
+    margin: 10px auto;
 }
 
 form{
     width:100%;
-  
     background:#fff;
+    
     padding:25px;
     border-radius:18px;
     box-shadow:0 8px 25px rgba(0,0,0,.15);
@@ -178,7 +183,7 @@ button:hover{
     }
 
     h1{
-        font-size:28px;
+        font-size:42px;
     }
 
     .home-container{
@@ -202,7 +207,7 @@ button:hover{
     }
 
     h1{
-        font-size:24px;
+        font-size:32px;
     }
 
 }
