@@ -1,7 +1,7 @@
-
 const scriptURL = "https://script.google.com/macros/s/AKfycbyZAzBrjAkJZEGP6J_o95g_3EEak9otHponmtrox3-ng-xKCnuT3BRbir_fmlAl1rTSTQ/exec";
 
 const form = document.getElementById("wastageForm");
+const submitBtn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", function (e) {
 
@@ -14,9 +14,13 @@ form.addEventListener("submit", function (e) {
         return;
     }
 
+    submitBtn.disabled = true;
+    submitBtn.textContent = "⏳ Saving...";
+
     const reader = new FileReader();
 
     reader.onload = function () {
+
         fetch(scriptURL, {
 
             method: "POST",
@@ -49,6 +53,9 @@ form.addEventListener("submit", function (e) {
 
             form.reset();
 
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit";
+
         })
 
         .catch(err => {
@@ -56,6 +63,9 @@ form.addEventListener("submit", function (e) {
             console.log(err);
 
             alert("Error: " + err);
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit";
 
         });
 
