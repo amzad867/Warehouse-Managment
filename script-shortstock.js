@@ -1,10 +1,14 @@
 const scriptURL = "https://script.google.com/macros/s/AKfycbz4m88v0MlvJnoMHO10E8x9Vi1_JYhnmrrm4bkbwg-poNkb0jqdj3JSR1qqdDA1OLjAFA/exec";
 
 const form = document.getElementById("shortstockForm");
+const submitBtn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", function(e){
 
     e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "⏳ Saving...";
 
     fetch(scriptURL, {
 
@@ -30,11 +34,17 @@ form.addEventListener("submit", function(e){
 
         form.reset();
 
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+
     })
 
     .catch(err => {
 
         alert("Error: " + err);
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
 
     });
 
